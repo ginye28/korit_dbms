@@ -67,3 +67,54 @@ ALTER TABLE menus
     DROP COLUMN is_available;
     
 Desc menus;
+
+alter table menus
+	add column spicy_level int default 0 check (spicy_level between 0 And 5);
+    
+desc menus;
+
+insert into menus (spicy_level) values (8);
+
+insert into menus (restaurant_id, menu_name, spicy_level, price) values
+	(1, 'coke', 0, 4000),
+    (2, 'pizza', 2, 23000),
+    (3, 'ramen', 4, 11000);
+    
+desc menus;
+
+select * from menus;
+
+insert into menus (restaurant_id, menu_name, spicy_level, price) values
+	(4, 'hmm', 6, 4000);
+    
+update menus set spicy_level = 0 where id = 4;
+
+select * from menus;
+
+select id, menu_name, price, spicy_level from menus where id in (1, 2, 3, 4);
+
+alter table restaurants
+	add column phone varchar(20) unique;
+    
+select * from restaurants;
+
+DESC restaurants;
+
+UPDATE restaurants SET phone = '051-111-1001' WHERE id = 1;
+
+select * from restaurants;
+
+insert into restaurants (name, category, phone) values
+	('jhj', 'hmm', '051-111-1001'),
+    ('jhh', 'meat', '051-111-1002');
+    
+select * from restaurants;
+
+-- 추가 안 됨 
+insert into restaurants (name, category, phone) values
+	('jhi', 'pig', '051-111-1001');
+select * from restaurants;
+
+alter table menus
+	(
+

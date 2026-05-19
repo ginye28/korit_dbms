@@ -34,4 +34,21 @@ insert into admins (username, email, full_name) values
 select * from admins;
 
 
+create table coupons(
+	id int primary key auto_increment,
+    coupon_code varchar(20) unique not null,
+    discount_rate int default 10,
+    is_active boolean default 0,
+    min_order_amount int default true,
+    expires_at date
+);
 
+DESC coupons;
+
+insert into coupons (coupon_code) values ('welcome');
+
+insert into coupons (coupon_code, discount_rate, min_order_amount) values ('summer', 20, 15000);
+
+insert into coupons (coupon_code, discount_rate, expires_at) values ('limited30d', 30, '2026-06-19');
+
+select * from coupons;
