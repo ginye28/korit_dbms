@@ -9,3 +9,6 @@ INSERT INTO customers (name, phone, address, email) VALUES
 ('윤도윤', '010-8901-2345', '부산시 북구 구포동 808',     'doyoon@email.com'),
 ('임지아', '010-9012-3456', '부산시 강서구 명지동 909',   NULL),
 ('한준서', '010-0123-4567', '부산시 기장군 일광읍 010',   'junser@email.com');
+
+select * from customers;
+select * from restaurants;
